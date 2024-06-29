@@ -5,7 +5,7 @@ const methodOverride = require("method-override");
 const mongoose = require("mongoose");
 const Base = require("./models/bases");
 const BaseRouter = require("./routes/base-routes");
-
+const port = process.env.PORT || 4000;
 const db =
   "mongodb+srv://Amir:narhanim123@cluster0.u7lmi2z.mongodb.net/restApiBase?retryWrites=true&w=majority&appName=Cluster0";
 
@@ -41,6 +41,6 @@ app.get("/api/items", async (req, res) => {
 });
 
 // Запуск сервера
-app.listen(4000, () => {
+app.listen(port, () => {
   console.log(`Server hosting on 4000 PORT`);
 });
